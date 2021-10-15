@@ -27,6 +27,9 @@ const testOb = {
 };
 
 function filterByQuery(query, animalsArray) {
+    if(!query) {
+        return animalsArray;
+    }
     const qArray = query.split("&");
     const qKeys = [];
     const qVals = [];
