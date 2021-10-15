@@ -60,6 +60,16 @@ function filterByQuery(query, animalsArray) {
     });
 }
 
+function findById(idVal, objArray) {
+    const ob = { message: `No record was found matching an id of ${idVal}.`};
+    for(let i = 0; i < objArray.length; i++) {
+        if(objArray[i].id === idVal) {
+            return objArray[i];
+        }
+    }
+    return ob;
+}
+
 app.get('/api/animals', (req,res) => {
     let results = animals;
     if(req.query) {
@@ -69,6 +79,11 @@ app.get('/api/animals', (req,res) => {
     //console.log(req.query);
     //console.log(joinQuery(testOb));
     //console.log(joinQuery(req.query));
+});
+
+app.get('/api/animals/:id', (req,res) => {
+    const result = findById(req.params.id, animals);
+    res.json(result);
 });
 
 app.listen(PORT, () => {
