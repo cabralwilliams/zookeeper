@@ -127,6 +127,16 @@
         "curious"
       ],
       "id": "12"
+    },
+    {
+      "name": "Arrogate",
+      "species": "horse",
+      "diet": "herbivore",
+      "personalityTraits": [
+        "hungry",
+        "anxious"
+      ],
+      "id": "13"
     }
   ]
 }
